@@ -1,6 +1,6 @@
 {
-	"name": "@kindspells/astro-shield",
-	"version": "1.7.1",
+	"name": "@jacobtread/astro-shield",
+	"version": "1.0.0",
 	"description": "Astro integration to enhance your website's security with SubResource Integrity hashes, Content-Security-Policy headers, and other techniques.",
 	"private": false,
 	"type": "module",
@@ -56,11 +56,15 @@
 		{
 			"name": "Andres Correa Casablanca",
 			"url": "https://blog.coderspirit.xyz/about/"
+		},
+		{
+			"name": "Jacobtread",
+			"url": "https://jacobtread.com/"
 		}
 	],
 	"license": "MIT",
 	"peerDependencies": {
-		"astro": "^4.0.0"
+		"astro": "^5.0.0"
 	},
 	"devDependencies": {
 		"@types/node": "^22.8.6",
