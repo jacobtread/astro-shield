@@ -3,13 +3,14 @@ SPDX-FileCopyrightText: 2024 KindSpells Labs S.L.
 
 SPDX-License-Identifier: CC-BY-4.0
 -->
+
 # Astro-Shield
 
-[![NPM Version](https://img.shields.io/npm/v/%40kindspells%2Fastro-shield)](https://www.npmjs.com/package/@kindspells/astro-shield)
+[![NPM Version](https://img.shields.io/npm/v/%40kindspells%2Fastro-shield)](https://www.npmjs.com/package/@jacobtread/astro-shield)
 ![NPM Downloads](https://img.shields.io/npm/dw/%40kindspells%2Fastro-shield)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/kindspells/astro-shield)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kindspells/astro-shield/tests.yml)
-[![Socket Badge](https://socket.dev/api/badge/npm/package/@kindspells/astro-shield)](https://socket.dev/npm/package/@kindspells/astro-shield)
+[![Socket Badge](https://socket.dev/api/badge/npm/package/@jacobtread/astro-shield)](https://socket.dev/npm/package/@jacobtread/astro-shield)
 
 ## Introduction
 
@@ -19,13 +20,13 @@ Astro-Shield helps you to enhance the security of your Astro site.
 
 ```bash
 # With NPM
-npm install --save-dev @kindspells/astro-shield
+npm install --save-dev @jacobtread/astro-shield
 
 # With Yarn
-yarn add --dev @kindspells/astro-shield
+yarn add --dev @jacobtread/astro-shield
 
 # With PNPM
-pnpm add --save-dev @kindspells/astro-shield
+pnpm add --save-dev @jacobtread/astro-shield
 ```
 
 ## How to use
@@ -33,14 +34,12 @@ pnpm add --save-dev @kindspells/astro-shield
 In your `astro.config.mjs` file:
 
 ```javascript
-import { defineConfig } from 'astro/config'
-import { shield } from '@kindspells/astro-shield'
+import { defineConfig } from "astro/config";
+import { shield } from "@jacobtread/astro-shield";
 
 export default defineConfig({
-  integrations: [
-    shield({})
-  ]
-})
+  integrations: [shield({})],
+});
 ```
 
 ## Learn more

@@ -7,15 +7,16 @@ title: Vercel
 description: How to configure Astro-Shield to work on Vercel
 ---
 
-import { Aside, Code } from '@astrojs/starlight/components';
+import { Aside, Code } from "@astrojs/starlight/components";
 
 ## `Content-Security-Policy` for Static Content
 
 Ensuring that Vercel serves your static content with the correct
 `Content-Security-Policy` headers requires some additional configuration.
 Specifically:
+
 1. Set `securityHeaders.enableOnStaticPages.provider` to the value
-`"vercel"`.
+   `"vercel"`.
 2. Set the `@astrojs/vercel/static` adapter (install the package
    `@astrojs/vercel`, you can check
    [its documentation](https://docs.astro.build/en/guides/deploy/vercel/)).
@@ -23,14 +24,14 @@ Specifically:
 See a more complete example:
 
 ```js
-import { resolve } from 'node:path'
+import { resolve } from "node:path";
 
-import vercel from '@astrojs/vercel/static';
-import { shield } from '@kindspells/astro-shield'
-import { defineConfig } from 'astro/config'
+import vercel from "@astrojs/vercel/static";
+import { shield } from "@jacobtread/astro-shield";
+import { defineConfig } from "astro/config";
 
-const rootDir = new URL('.', import.meta.url).pathname
-const modulePath = resolve(rootDir, 'src', 'generated', 'sriHashes.mjs')
+const rootDir = new URL(".", import.meta.url).pathname;
+const modulePath = resolve(rootDir, "src", "generated", "sriHashes.mjs");
 
 export default defineConfig({
   adapter: vercel(),
@@ -53,22 +54,22 @@ export default defineConfig({
           // - If not set, Astro-Shield will use a minimal set of default
           //   directives.
           cspDirectives: {
-            'default-src': "'none'",
-          }
-        }
-      }
-    })
-  ]
-})
+            "default-src": "'none'",
+          },
+        },
+      },
+    }),
+  ],
+});
 ```
 
-<Aside type='tip'>
+<Aside type="tip">
   To see how to configure CSP headers for your dynamic content, check the page
-  [Content-Security-Policy (CSP)](/guides/security-headers/content-security-policy/#enabling-csp-for-ssr-content).
+  [Content-Security-Policy
+  (CSP)](/guides/security-headers/content-security-policy/#enabling-csp-for-ssr-content).
 </Aside>
 
-<Aside type='tip'>
-  To learn more about how to configure headers for static content on Vercel,
-  see their official documentation:
-  - [Vercel: Headers](https://vercel.com/docs/projects/project-configuration#headers)
+<Aside type="tip">
+  To learn more about how to configure headers for static content on Vercel, see their official
+  documentation: - [Vercel: Headers](https://vercel.com/docs/projects/project-configuration#headers)
 </Aside>

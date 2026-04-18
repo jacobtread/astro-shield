@@ -11,32 +11,20 @@ description: Get started protecting your Astro sites with Astro-Shield.
 
 Astro-Shield will help you enhance the security of your Astro site by allowing
 you to apply many security best practices, such as:
+
 - [Subresource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
 - [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
 
-
 ## How to install
 
-import { Code, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Code, Tabs, TabItem } from "@astrojs/starlight/components";
 
 To install, run the following command in your terminal:
 
 <Tabs>
-  <TabItem label="npm">
-```bash
-npm install --save-dev @kindspells/astro-shield
-```
-  </TabItem>
-  <TabItem label="pnpm">
-```bash
-pnpm add --save-dev @kindspells/astro-shield
-```
-  </TabItem>
-  <TabItem label="yarn">
-```bash
-yarn add --dev @kindspells/astro-shield
-```
-  </TabItem>
+  <TabItem label="npm">```bash npm install --save-dev @jacobtread/astro-shield ```</TabItem>
+  <TabItem label="pnpm">```bash pnpm add --save-dev @jacobtread/astro-shield ```</TabItem>
+  <TabItem label="yarn">```bash yarn add --dev @jacobtread/astro-shield ```</TabItem>
 </Tabs>
 
 ## Enabling the integration
@@ -45,12 +33,10 @@ In your `astro.config.mjs` file, import the integration and add it to the
 integrations array:
 
 ```js
-import { defineConfig } from 'astro/config'
-import { shield } from '@kindspells/astro-shield'
+import { defineConfig } from "astro/config";
+import { shield } from "@jacobtread/astro-shield";
 
 export default defineConfig({
-  integrations: [
-    shield({})
-  ]
-})
+  integrations: [shield({})],
+});
 ```

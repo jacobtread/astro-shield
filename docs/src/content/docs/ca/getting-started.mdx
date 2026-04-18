@@ -11,32 +11,20 @@ description: Comença a protegir els teus llocs web Astro amb Astro-Shield.
 
 Astro-Shield t'ajudarà a millorar la seguretat dels teus llocs web Astro
 permetent-te aplicar un conjunt ampli de bones pràctiques de seguretat, com ara:
+
 - [Subresource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
 - [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
 
-
 ## How to install
 
-import { Code, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Code, Tabs, TabItem } from "@astrojs/starlight/components";
 
 Per a instal·lar-lo, executa la següent comanda al teu terminal:
 
 <Tabs>
-  <TabItem label="npm">
-```bash
-npm install --save-dev @kindspells/astro-shield
-```
-  </TabItem>
-  <TabItem label="pnpm">
-```bash
-pnpm add --save-dev @kindspells/astro-shield
-```
-  </TabItem>
-  <TabItem label="yarn">
-```bash
-yarn add --dev @kindspells/astro-shield
-```
-  </TabItem>
+  <TabItem label="npm">```bash npm install --save-dev @jacobtread/astro-shield ```</TabItem>
+  <TabItem label="pnpm">```bash pnpm add --save-dev @jacobtread/astro-shield ```</TabItem>
+  <TabItem label="yarn">```bash yarn add --dev @jacobtread/astro-shield ```</TabItem>
 </Tabs>
 
 ## Activant la integració
@@ -45,12 +33,10 @@ Al teu fitxer de configuració `astro.config.mjs`, importa Astro-Shield i
 afegeix-lo a la llista:
 
 ```js
-import { defineConfig } from 'astro/config'
-import { shield } from '@kindspells/astro-shield'
+import { defineConfig } from "astro/config";
+import { shield } from "@jacobtread/astro-shield";
 
 export default defineConfig({
-  integrations: [
-    shield({})
-  ]
-})
+  integrations: [shield({})],
+});
 ```

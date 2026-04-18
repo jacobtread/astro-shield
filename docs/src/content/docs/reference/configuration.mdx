@@ -7,7 +7,7 @@ title: Configuration Reference
 description: An overview of all the configuration options Astro-Shield supports.
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Aside } from "@astrojs/starlight/components";
 
 ## Configure the `astro-shield` integration
 
@@ -17,17 +17,15 @@ configuration file:
 
 ```js
 // astro.config.mjs
-import { defineConfig } from 'astro/config'
-import { shield } from '@kindspells/astro-shield'
+import { defineConfig } from "astro/config";
+import { shield } from "@jacobtread/astro-shield";
 
 export default defineConfig({
-	integrations: [
-		shield({}),
-	],
-})
+  integrations: [shield({})],
+});
 ```
 
-You can pass the following options to the `@kindspells/astro-shield`
+You can pass the following options to the `@jacobtread/astro-shield`
 integration.
 
 ### `sri`
@@ -40,36 +38,35 @@ Type: `object | undefined`, defaults to `undefined`.
 Example:
 
 ```js
-import { resolve } from 'node:path'
+import { resolve } from "node:path";
 
-import { defineConfig } from 'astro/config'
-import { shield } from '@kindspells/astro-shield'
+import { defineConfig } from "astro/config";
+import { shield } from "@jacobtread/astro-shield";
 
-const rootDir = new URL('.', import.meta.url).pathname
-const modulePath = resolve(rootDir, 'src', 'generated', 'sriHashes.mjs')
+const rootDir = new URL(".", import.meta.url).pathname;
+const modulePath = resolve(rootDir, "src", "generated", "sriHashes.mjs");
 
 export default defineConfig({
-	integrations: [
-		shield({
+  integrations: [
+    shield({
       sri: {
         enableMiddleware: true,
         hashesModule: modulePath,
         allowInlineScripts: false,
         allowInlineStyles: false,
-        scriptsAllowListUrls: [
-          'https://example.com/script.js',
-        ],
+        scriptsAllowListUrls: ["https://example.com/script.js"],
       },
     }),
-	],
-})
+  ],
+});
 ```
 
 ### `sri.allowInlineScripts`
 
 Specifies whether Astro-Shield should allow inline scripts (and how). Its
 possible values are:
-- `'all'` *(default)*: Allow all inline scripts in all pages.
+
+- `'all'` _(default)_: Allow all inline scripts in all pages.
 - `'static'`: Allow inline scripts only in static pages.
 - `false`: Disallow all inline scripts.
 
@@ -77,7 +74,8 @@ possible values are:
 
 Specifies whether Astro-Shield should allow inline styles (and how). Its
 possible values are:
-- `'all'` *(default)*: Allow all inline styles in all pages.
+
+- `'all'` _(default)_: Allow all inline styles in all pages.
 - `'static'`: Allow inline styles only in static pages.
 - `false`: Disallow all inline styles.
 
@@ -91,9 +89,9 @@ It is also necessary in case we need to generate the Content-Security-Policy
 
 Type: `boolean`, defaults to `false`.
 
-<Aside type='caution'>
-  If set to `true`, it is advisable to set the
-  [`sri.hashesModule`](#srihashesmodule) option as well.
+<Aside type="caution">
+  If set to `true`, it is advisable to set the [`sri.hashesModule`](#srihashesmodule) option as
+  well.
 </Aside>
 
 ### `sri.enableStatic`
@@ -148,23 +146,23 @@ Example:
 
 ```js
 // astro.config.mjs
-import { defineConfig } from 'astro/config'
-import { shield } from '@kindspells/astro-shield'
+import { defineConfig } from "astro/config";
+import { shield } from "@jacobtread/astro-shield";
 
 export default defineConfig({
-	integrations: [
-		shield({
+  integrations: [
+    shield({
       securityHeaders: {
-        enableOnStaticPages: { provider: 'netlify' },
+        enableOnStaticPages: { provider: "netlify" },
         contentSecurityPolicy: {
           cspDirectives: {
-            'default-src': "'none'",
+            "default-src": "'none'",
           },
         },
       },
     }),
-	],
-})
+  ],
+});
 ```
 
 ### `securityHeaders.contentSecurityPolicy`
@@ -198,4 +196,5 @@ Type: `object | undefined`, defaults to `undefined`.
 #### `securityHeaders.enableOnStaticPages.provider`
 
 Possible values are:
+
 - `'netlify'`: Generate the security headers for static content on Netlify.

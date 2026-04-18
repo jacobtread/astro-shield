@@ -21,15 +21,9 @@ import { Code, Tabs, TabItem } from "@astrojs/starlight/components";
 इसे इंस्टॉल करने के लिए, अपने टर्मिनल में निम्नलिखित कमांड चलाएँ:
 
 <Tabs>
-  <TabItem label="npm">
-    ```bash npm install --save-dev @kindspells/astro-shield ```
-  </TabItem>
-  <TabItem label="pnpm">
-    ```bash pnpm add --save-dev @kindspells/astro-shield ```
-  </TabItem>
-  <TabItem label="yarn">
-    ```bash yarn add --dev @kindspells/astro-shield ```
-  </TabItem>
+  <TabItem label="npm">```bash npm install --save-dev @jacobtread/astro-shield ```</TabItem>
+  <TabItem label="pnpm">```bash pnpm add --save-dev @jacobtread/astro-shield ```</TabItem>
+  <TabItem label="yarn">```bash yarn add --dev @jacobtread/astro-shield ```</TabItem>
 </Tabs>
 
 ## एकीकरण सक्रिय करना
@@ -39,7 +33,7 @@ import { Code, Tabs, TabItem } from "@astrojs/starlight/components";
 
 ```js
 import { defineConfig } from "astro/config";
-import { shield } from "@kindspells/astro-shield";
+import { shield } from "@jacobtread/astro-shield";
 
 export default defineConfig({
   integrations: [shield({})],

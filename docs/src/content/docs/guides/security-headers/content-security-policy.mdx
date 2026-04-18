@@ -7,7 +7,7 @@ title: Content-Security-Policy (CSP)
 description: How to configure the Content-Security-Policy headers of your website with Astro-Shield
 ---
 
-import { Aside, Code } from '@astrojs/starlight/components';
+import { Aside, Code } from "@astrojs/starlight/components";
 
 ## Enabling CSP for SSR content
 
@@ -19,19 +19,19 @@ If you want more control, then you can set other nested options, such as
 `cspDirectives`.
 
 ```js
-import { resolve } from 'node:path'
+import { resolve } from "node:path";
 
-import { defineConfig } from 'astro/config'
-import { shield } from '@kindspells/astro-shield'
+import { defineConfig } from "astro/config";
+import { shield } from "@jacobtread/astro-shield";
 
-const rootDir = new URL('.', import.meta.url).pathname
-const modulePath = resolve(rootDir, 'src', 'generated', 'sriHashes.mjs')
+const rootDir = new URL(".", import.meta.url).pathname;
+const modulePath = resolve(rootDir, "src", "generated", "sriHashes.mjs");
 
 export default defineConfig({
   integrations: [
     shield({
       sri: {
-        enableMiddleware: true,   // MUST be enabled for dynamic pages!
+        enableMiddleware: true, // MUST be enabled for dynamic pages!
         hashesModule: modulePath, // SHOULD be set!
       },
 
@@ -50,31 +50,29 @@ export default defineConfig({
           // - If not set, the middleware will use a minimal set of
           //   default directives.
           cspDirectives: {
-            'default-src': "'none'",
-          }
-        }
-      }
-    })
-  ]
-})
+            "default-src": "'none'",
+          },
+        },
+      },
+    }),
+  ],
+});
 ```
 
-<Aside type='tip'>
-  By default, Astro-Shield will add `'self`' to the `script-src` directive. You
-  can override this behavior by setting your own `script-src` directive (which
-  can be an empty string).
+<Aside type="tip">
+  By default, Astro-Shield will add `'self`' to the `script-src` directive. You can override this
+  behavior by setting your own `script-src` directive (which can be an empty string).
 </Aside>
 
 <Aside type="caution">
-  When enabling CSP headers, it is advisable to also set the
-  `sri.enableMiddleware` option to `true`. It is also recommended to set the
-  `sri.hashesModule` option.
+  When enabling CSP headers, it is advisable to also set the `sri.enableMiddleware` option to
+  `true`. It is also recommended to set the `sri.hashesModule` option.
 </Aside>
 
 <Aside type='tip'>
   If you want to set CSP headers for your static content, check the specific
   guide for your deployment platform:
 
-  - [Netlify](/guides/hosting-integrations/netlify/#content-security-policy-for-static-content)
-  - [Vercel](/guides/hosting-integrations/vercel/#content-security-policy-for-static-content)
-</Aside>
+- [Netlify](/guides/hosting-integrations/netlify/#content-security-policy-for-static-content)
+- [Vercel](/guides/hosting-integrations/vercel/#content-security-policy-for-static-content)
+  </Aside>

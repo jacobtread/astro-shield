@@ -6,11 +6,11 @@
 $schema: 'https://moonrepo.dev/schemas/workspace.json'
 
 projects:
-  globs:
-    - '@kindspells/astro-shield/e2e/fixtures/*'
-  sources:
-    astro-shield: '@kindspells/astro-shield'
-    docs: 'docs'
+    globs:
+        - '@jacobtread/astro-shield/e2e/fixtures/*'
+    sources:
+        astro-shield: '@jacobtread/astro-shield'
+        docs: 'docs'
 
 vcs:
-  defaultBranch: 'main'
+    defaultBranch: 'main'

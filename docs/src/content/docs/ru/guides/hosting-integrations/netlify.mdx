@@ -7,7 +7,7 @@ title: Netlify
 description: Как настроить Astro-Shield для работы в Netlify
 ---
 
-import { Aside, Code } from '@astrojs/starlight/components';
+import { Aside, Code } from "@astrojs/starlight/components";
 
 ## `Content-Security-Policy` для статического контента
 
@@ -18,13 +18,13 @@ import { Aside, Code } from '@astrojs/starlight/components';
 Рассмотрим полный пример:
 
 ```js
-import { resolve } from 'node:path'
+import { resolve } from "node:path";
 
-import { defineConfig } from 'astro/config'
-import { shield } from '@kindspells/astro-shield'
+import { defineConfig } from "astro/config";
+import { shield } from "@jacobtread/astro-shield";
 
-const rootDir = new URL('.', import.meta.url).pathname
-const modulePath = resolve(rootDir, 'src', 'generated', 'sriHashes.mjs')
+const rootDir = new URL(".", import.meta.url).pathname;
+const modulePath = resolve(rootDir, "src", "generated", "sriHashes.mjs");
 
 export default defineConfig({
   integrations: [
@@ -46,13 +46,13 @@ export default defineConfig({
           // - Если не установлено, Astro-Shield будет использовать минимальный
           //   набор директив по умолчанию.
           cspDirectives: {
-            'default-src': "'none'",
-          }
-        }
-      }
-    })
-  ]
-})
+            "default-src": "'none'",
+          },
+        },
+      },
+    }),
+  ],
+});
 ```
 
 <Aside type='caution'>
@@ -60,17 +60,19 @@ export default defineConfig({
   ограничена файлом `_headers`, который Netlify читает из каталога развертывания
   (обычно `dist/`).
 
-  Поддержка других методов, таких как файл `netlify.toml`, пока недоступна.
+Поддержка других методов, таких как файл `netlify.toml`, пока недоступна.
+
 </Aside>
 
-<Aside type='tip'>
-  Чтобы узнать, как настроить заголовки CSP для вашего динамического контента, ознакомьтесь со страницей
-  [Content-Security-Policy (CSP)](/ru/guides/security-headers/content-security-policy/#включение-csp-для-ssr-контента).
+<Aside type="tip">
+  Чтобы узнать, как настроить заголовки CSP для вашего динамического контента, ознакомьтесь со
+  страницей [Content-Security-Policy
+  (CSP)](/ru/guides/security-headers/content-security-policy/#включение-csp-для-ssr-контента).
 </Aside>
 
-<Aside type='tip'>
+<Aside type="tip">
   Чтобы узнать больше о том, как настроить заголовки для статического контента на Netlify,
-  ознакомьтесь с их официальной документацией:
-  - [Netlify: Headers](https://docs.netlify.com/routing/headers)
-  - [Netlify: File Based Configuration (Headers)](https://docs.netlify.com/configure-builds/file-based-configuration/#headers)
+  ознакомьтесь с их официальной документацией: - [Netlify:
+  Headers](https://docs.netlify.com/routing/headers) - [Netlify: File Based Configuration
+  (Headers)](https://docs.netlify.com/configure-builds/file-based-configuration/#headers)
 </Aside>

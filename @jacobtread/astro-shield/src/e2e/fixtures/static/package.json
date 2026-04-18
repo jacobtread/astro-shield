@@ -1,0 +1,16 @@
+{
+    "name": "static",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "build": "astro build",
+        "clean": "rm -rf ./dist; rm -rf ./src/generated/*"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "astro": "^4.16.8"
+    },
+    "devDependencies": {
+        "@jacobtread/astro-shield": "workspace:*"
+    }
+}
