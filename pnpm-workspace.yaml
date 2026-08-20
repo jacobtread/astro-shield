@@ -3,6 +3,11 @@
 # SPDX-License-Identifier: MIT
 
 packages:
-    - 'docs'
-    - '@jacobtread/*'
-    - '@jacobtread/astro-shield/src/e2e/fixtures/*'
+  - 'docs'
+  - '@jacobtread/*'
+  - '@jacobtread/astro-shield/src/e2e/fixtures/*'
+allowBuilds:
+  '@biomejs/biome': true
+  aws-sdk: true
+  esbuild: true
+  sharp: true

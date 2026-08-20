@@ -1,16 +1,17 @@
 {
-    "name": "static",
-    "version": "1.0.0",
-    "type": "module",
-    "scripts": {
-        "build": "astro build",
-        "clean": "rm -rf ./dist; rm -rf ./src/generated/*"
-    },
-    "license": "MIT",
-    "dependencies": {
-        "astro": "^4.16.8"
-    },
-    "devDependencies": {
-        "@jacobtread/astro-shield": "workspace:*"
-    }
+  "name": "static",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "astro build",
+    "clean": "rm -rf ./dist; rm -rf ./src/generated/*"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@astrojs/node": "^11.1.4",
+    "astro": "^7.0.0"
+  },
+  "devDependencies": {
+    "@jacobtread/astro-shield": "workspace:*"
+  }
 }

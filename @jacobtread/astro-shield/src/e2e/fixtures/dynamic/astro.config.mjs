@@ -10,15 +10,15 @@ import { defineConfig } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
-    output: 'server',
-    trailingSlash: 'always',
-    adapter: node({ mode: 'standalone' }),
-    integrations: [
-        shield({
-            sri: {
-                enableStatic: false,
-                enableMiddleware: true,
-            },
-        }),
-    ],
+	output: 'server',
+	trailingSlash: 'always',
+	adapter: node({ mode: 'standalone' }),
+	integrations: [
+		shield({
+			sri: {
+				enableStatic: false,
+				enableMiddleware: true,
+			},
+		}),
+	],
 })
