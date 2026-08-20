@@ -84,7 +84,7 @@ const _checkHtmlIsPatched = async (
 
   // Checking for inline styles
   // -------------------------------------------------------------------------
-  let styleMatches = 0;
+  let _styleMatches = 0;
   // biome-ignore lint/suspicious/noAssignInExpressions: only for testing
   while ((match = styleRegex.exec(content)) !== null) {
     const { attrs: styleAttrs, content: styleContent } = match.groups ?? {};
@@ -101,7 +101,7 @@ const _checkHtmlIsPatched = async (
 
     expect(styleIntegrity).toEqual(generateSRIHash(styleContent));
 
-    styleMatches += 1;
+    _styleMatches += 1;
   }
 
   // No longer a valid case as Astro now in static projects can decide to
