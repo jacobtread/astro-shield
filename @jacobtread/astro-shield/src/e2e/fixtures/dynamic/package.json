@@ -1,19 +1,19 @@
 {
-    "name": "dynamic",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "type": "module",
-    "scripts": {
-        "build": "astro build",
-        "clean": "rm -rf ./dist; rm -rf ./src/generated/*"
-    },
-    "license": "MIT",
-    "dependencies": {
-        "@astrojs/node": "^8.3.4",
-        "astro": "^4.16.8"
-    },
-    "devDependencies": {
-        "@jacobtread/astro-shield": "workspace:*"
-    }
+  "name": "dynamic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "astro build",
+    "clean": "rm -rf ./dist; rm -rf ./src/generated/*"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@astrojs/node": "^11.1.4",
+    "astro": "^7.0.0"
+  },
+  "devDependencies": {
+    "@jacobtread/astro-shield": "workspace:*"
+  }
 }
